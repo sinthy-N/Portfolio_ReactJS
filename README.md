@@ -10,18 +10,23 @@ La structure du projet est organisée de manière logique pour faciliter la main
 
 - **`src/` :** Contient le code source du projet.
   - **`pages/` :** Comprend les composants de chaque page.
+  - Homepage.jsx
+  - Login.jsx
+  - SignUp.jsx
+  - index.js
   - **`styles/` :** Contient les fichiers de styles CSS.
+  - Article.css
+  - formulaire.css
   - **`client.js` :** Fichier de configuration pour la connexion à Supabase.
   - **`index.js` :** Point d'entrée de l'application.
   - **`Article.js` :** Composant pour la gestion des articles.
   - **`App.js` (ou `App.jsx`):** Fichier principal définissant les routes et gérant l'état global.
   - **`setupTests.js` :** Configuration pour les tests Jest.
 
+__Chaque fichier est commenté.__
+
+
 ## Gestion des Utilisateurs avec Supabase
-
-
-
-### Connexion (`Login.jsx`) et Inscription (`SignUp.jsx`)
 
 Les pages de connexion et d'inscription utilisent Supabase pour gérer l'authentification. Les données des utilisateurs sont stockées dans une base de données Supabase. Le composant `client.js` configure la connexion à Supabase.
 
@@ -29,6 +34,9 @@ La mise en place de la gestion des utilisateurs avec Supabase pour les fonctionn
 <br>
 <img src="./public/images/bd_user.png" width="500"/>
 <br>
+
+
+### Connexion (`Login.jsx`) et Inscription (`SignUp.jsx`)
 
 Le design des pages de connexion (Login.jsx) et d'inscription (SignUp.jsx) a été inspiré par une template HTML et CSS disponible sur CodingNepalWeb. Voici le lien :  https://www.codingnepalweb.com/responsive-login-form-using-only-html-css/
 
