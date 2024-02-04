@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# Documentation du Projet ReactJS - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Ce projet est un site de portfolio développé en utilisant ReactJS. Il propose une structure organisée avec des fonctionnalités telles que la gestion des utilisateurs (connexion et inscription) via Supabase, ainsi qu'une intégration d'API pour afficher des articles sur la page d'accueil.
 
-In the project directory, you can run:
+## Structure du Projet
 
-### `npm start`
+La structure du projet est organisée de manière logique pour faciliter la maintenance et la compréhension. Voici un aperçu des principaux répertoires et fichiers :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **`src/` :** Contient le code source du projet.
+  - **`pages/` :** Comprend les composants de chaque page.
+  - **`styles/` :** Contient les fichiers de styles CSS.
+  - **`client.js` :** Fichier de configuration pour la connexion à Supabase.
+  - **`index.js` :** Point d'entrée de l'application.
+  - **`Article.js` :** Composant pour la gestion des articles.
+  - **`App.js` (ou `App.jsx`):** Fichier principal définissant les routes et gérant l'état global.
+  - **`setupTests.js` :** Configuration pour les tests Jest.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Gestion des Utilisateurs avec Supabase
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Connexion (`Login.jsx`) et Inscription (`SignUp.jsx`)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Les pages de connexion et d'inscription utilisent Supabase pour gérer l'authentification. Les données des utilisateurs sont stockées dans une base de données Supabase. Le composant `client.js` configure la connexion à Supabase.
+<br>
+<img src="./public/images/bd_user.png" width="300"/>
+<br>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`Login.jsx` :** Permet à l'utilisateur de se connecter à son compte existant.
+<br>
+<img src="./public/images/login_pw_no.png" width="300"/>
+<img src="./public/images/login_pw_see.png" width="300"/>
+<br>
+- **`SignUp.jsx` :** Permet à l'utilisateur de créer un nouveau compte. Un e-mail de confirmation est envoyé à l'utilisateur depuis "noreply@mail.app.supabase.io".
+<br>
+<img src="./public/images/signup_pw_no.png" width="300"/>
+<img src="./public/images/signup_pw_see.png" width="300"/>
+<br>
+<img src="./public/images/mail_confirmation.png" width="300"/>
+<br>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Stockage du Token
 
-### `npm run eject`
+Le token d'authentification est stocké dans la session via `sessionStorage`. Si un utilisateur est déjà connecté (le token est présent dans `sessionStorage`), il est automatiquement redirigé vers la page d'accueil.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Déconnexion
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+La page d'accueil (`Homepage.jsx`) contient un bouton "Logout" qui permet à l'utilisateur de se déconnecter. En cliquant sur ce bouton, l'utilisateur est redirigé vers la page de connexion (`Login.jsx`).
+<br>
+<img src="./public/images/homepage.png" width="300"/>
+<br>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Intégration d'API pour les Articles
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La page d'accueil (`Homepage.jsx`) intègre des articles à partir de l'API JSONPlaceholder. Le composant `Article.js` effectue une requête Axios pour récupérer les articles et les affiche de manière structurée.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **`Article.js` :** Composant pour la gestion et l'affichage des articles.
+- **`styles/Article.css` :** Styles spécifiques pour la mise en page des articles.
+<br>
+<img src="./public/images/articles.png" width="300"/>
+<br>
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Conclusion
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ce projet ReactJS offre une architecture claire et modulaire pour un site de portfolio. L'utilisation de Supabase pour la gestion des utilisateurs et Axios pour l'intégration d'API contribue à la robustesse et à la flexibilité de l'application. Il fournit également une base solide pour des fonctionnalités futures et des améliorations continues.
