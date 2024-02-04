@@ -1,13 +1,14 @@
+/* Styles pour le conteneur d'articles */
 .articles-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .article {
-    width: 23%; 
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Styles pour chaque article individuel */
+.article {
+  width: 23%; /* Largeur de chaque article */
+  margin-bottom: 20px; /* Marge en bas de chaque article */
+  padding: 10px; /* Rembourrage à l'intérieur de chaque article */
+  border: 1px solid #ccc; /* Bordure de chaque article avec couleur grise */
+}

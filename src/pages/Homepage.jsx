@@ -1,36 +1,41 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Article from '../Article'; // Importez le composant Article
+import Article from '../Article'; // Importe le composant Article
 
-
+// Définit le composant fonctionnel Homepage prenant un prop token
 const Homepage = ({ token }) => {
+  // Utilise le hook useNavigate pour obtenir la fonction de navigation
   let navigate = useNavigate();
 
+  // Fonction pour gérer la déconnexion de l'utilisateur
   function handleLogout() {
-    sessionStorage.removeItem('token');
-    navigate('/');
+    sessionStorage.removeItem('token'); // Supprime le token de la session
+    navigate('/'); // Redirige vers la page d'accueil
   }
 
+  // Rendu du composant
   return (
-    <div style={{ overflowY: 'auto', height: '100vh'}}>
+    <div style={{ overflowY: 'auto', height: '100vh' }}>
       {/* Navbar */}
       <div style={{ backgroundColor: '#f8f9fa', padding: '15px', marginBottom: '20px' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <a href="#home" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <h1>{token.user.user_metadata.full_name}</h1>
+            <h1>{token.user.user_metadata.full_name}</h1> {/* Affiche le nom complet de l'utilisateur */}
           </a>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a href="#profil" style={{ textDecoration: 'none', color: 'inherit' }}>Profil</a>
             <a href="#competences" style={{ textDecoration: 'none', color: 'inherit' }}>Compétences</a>
             <a href="#experiences" style={{ textDecoration: 'none', color: 'inherit' }}>Expériences</a>
             <a href="#formations" style={{ textDecoration: 'none', color: 'inherit' }}>Formations</a>
-            <button className="logout-button" onClick={handleLogout}>Logout</button>
+            <a href="#articles" style={{ textDecoration: 'none', color: 'inherit' }}>Articles</a>
+            <button className="logout-button" onClick={handleLogout}>Logout</button> {/* Bouton de déconnexion */}
           </div>
         </div>
       </div>
 
       {/* Profile Section */}
       <div>
+        {/* Section Profil */}
         <div id='profil' style={{ backgroundColor: '#007BFF', color: '#fff', padding: '5% 0' }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ marginBottom: '10px' }}>Sinthy</div>
@@ -66,12 +71,13 @@ const Homepage = ({ token }) => {
             </div>
           </div>
         </div>
+        <div id='articles' >
+          <h2>Articles</h2>
+          <Article />
+        </div>
       </div>
       {/* Section des articles */}
-      <div>
-        <h2>Articles</h2>
-        <Article />
-      </div>
+
     </div>
   );
 };

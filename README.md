@@ -24,9 +24,13 @@ La structure du projet est organisée de manière logique pour faciliter la main
 ### Connexion (`Login.jsx`) et Inscription (`SignUp.jsx`)
 
 Les pages de connexion et d'inscription utilisent Supabase pour gérer l'authentification. Les données des utilisateurs sont stockées dans une base de données Supabase. Le composant `client.js` configure la connexion à Supabase.
+
+La mise en place de la gestion des utilisateurs avec Supabase pour les fonctionnalités de connexion et d'inscription a été réalisée en suivant les tutoriels YouTube de "CodeWithThilakS | CWTS" disponibles dans la playlist suivante : [Supabase Login and Sign Up Tutorial Playlist](https://www.youtube.com/playlist?list=PLl6EcvA_AoxEU455Yi1JoYV
 <br>
 <img src="./public/images/bd_user.png" width="300"/>
 <br>
+
+Le design des pages de connexion (Login.jsx) et d'inscription (SignUp.jsx) a été inspiré par une template HTML et CSS disponible sur CodingNepalWeb. Voici le lien :  https://www.codingnepalweb.com/responsive-login-form-using-only-html-css/
 
 - **`Login.jsx` :** Permet à l'utilisateur de se connecter à son compte existant.
 <br>
@@ -40,6 +44,9 @@ Les pages de connexion et d'inscription utilisent Supabase pour gérer l'authent
 <br>
 <img src="./public/images/mail_confirmation.png" width="300"/>
 <br>
+
+L'utilisation de Font Awesome a été intégrée pour améliorer l'expérience utilisateur, notamment avec les icônes d'œil permettant de montrer et masquer les mots de passe sur les pages de connexion et d'inscription.
+
 
 ### Stockage du Token
 
