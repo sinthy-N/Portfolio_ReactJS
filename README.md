@@ -27,22 +27,22 @@ Les pages de connexion et d'inscription utilisent Supabase pour gérer l'authent
 
 La mise en place de la gestion des utilisateurs avec Supabase pour les fonctionnalités de connexion et d'inscription a été réalisée en suivant les tutoriels YouTube de "CodeWithThilakS | CWTS" disponibles dans la playlist suivante : [Supabase Login and Sign Up Tutorial Playlist](https://www.youtube.com/playlist?list=PLl6EcvA_AoxEU455Yi1JoYV
 <br>
-<img src="./public/images/bd_user.png" width="300"/>
+<img src="./public/images/bd_user.png" width="500"/>
 <br>
 
 Le design des pages de connexion (Login.jsx) et d'inscription (SignUp.jsx) a été inspiré par une template HTML et CSS disponible sur CodingNepalWeb. Voici le lien :  https://www.codingnepalweb.com/responsive-login-form-using-only-html-css/
 
 - **`Login.jsx` :** Permet à l'utilisateur de se connecter à son compte existant.
 <br>
-<img src="./public/images/login_pw_no.png" width="300"/>
-<img src="./public/images/login_pw_see.png" width="300"/>
+<img src="./public/images/login_pw_no.png" width="500"/>
+<img src="./public/images/login_pw_see.png" width="500"/>
 <br>
 - **`SignUp.jsx` :** Permet à l'utilisateur de créer un nouveau compte. Un e-mail de confirmation est envoyé à l'utilisateur depuis "noreply@mail.app.supabase.io".
 <br>
-<img src="./public/images/signup_pw_no.png" width="300"/>
-<img src="./public/images/signup_pw_see.png" width="300"/>
+<img src="./public/images/signup_pw_no.png" width="500"/>
+<img src="./public/images/signup_pw_see.png" width="500"/>
 <br>
-<img src="./public/images/mail_confirmation.png" width="300"/>
+<img src="./public/images/mail_confirmation.png" width="500"/>
 <br>
 
 L'utilisation de Font Awesome a été intégrée pour améliorer l'expérience utilisateur, notamment avec les icônes d'œil permettant de montrer et masquer les mots de passe sur les pages de connexion et d'inscription.
@@ -57,7 +57,7 @@ Le token d'authentification est stocké dans la session via `sessionStorage`. Si
 
 La page d'accueil (`Homepage.jsx`) contient un bouton "Logout" qui permet à l'utilisateur de se déconnecter. En cliquant sur ce bouton, l'utilisateur est redirigé vers la page de connexion (`Login.jsx`).
 <br>
-<img src="./public/images/homepage.png" width="300"/>
+<img src="./public/images/homepage.png" width="500"/>
 <br>
 
 
@@ -68,10 +68,5 @@ La page d'accueil (`Homepage.jsx`) intègre des articles à partir de l'API JSON
 - **`Article.js` :** Composant pour la gestion et l'affichage des articles.
 - **`styles/Article.css` :** Styles spécifiques pour la mise en page des articles.
 <br>
-<img src="./public/images/articles.png" width="300"/>
+<img src="./public/images/articles.png" width="500"/>
 <br>
-
-
-## Conclusion
-
-Ce projet ReactJS offre une architecture claire et modulaire pour un site de portfolio. L'utilisation de Supabase pour la gestion des utilisateurs et Axios pour l'intégration d'API contribue à la robustesse et à la flexibilité de l'application. Il fournit également une base solide pour des fonctionnalités futures et des améliorations continues.
